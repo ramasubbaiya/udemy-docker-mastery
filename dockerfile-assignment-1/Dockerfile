@@ -16,14 +16,12 @@
 
 # Instructions from the app developer
 # - you should use the 'node' official image, with the alpine 6.x branch
-docker pull node:boron-alpine
-
 FROM node:boron-alpine
 MAINTAINER Ramasubbaiya Adaikkalam <ramasubbaiya@gmail.com>
 
 # - this app listens on port 3000, but the container should launch on port 80
   #  so it will respond to http://localhost:80 on your computer
-EXPOSE 80
+EXPOSE 3000
 # - then it should use alpine package manager to install tini: 'apk add --update tini'
 RUN apk add --update tini
 # - then it should create directory /usr/src/app for app files with 'mkdir -p /usr/src/app'
